@@ -1,0 +1,2 @@
+The requests collection.json that invlolves the juices need authentication tokens, and it needs to be
+placed manually in the POST request headers. New & working tokens can be regenerated in login-user request!

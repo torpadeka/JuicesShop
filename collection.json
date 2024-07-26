@@ -1,0 +1,182 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "MCC-JuiceShop",
+    "collectionId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
+    "dateExported": "2024-07-23T15:42:22.483Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "895d1e75-8b42-4a3c-a375-7aa3290b5c81",
+            "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
+            "containerId": "",
+            "name": "get-all-juices",
+            "url": "{{BASE_API_URL}}/juices",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-07-23T11:24:09.630Z",
+            "modified": "2024-07-23T14:35:21.203Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMTc0NDkwOCwiZXhwIjoxNzIxNzQ4NTA4fQ.SnHsEv5bVTCbUlJLkqPE6xs-C3e_-wrvBwecum5zdZ0"
+                }
+            ]
+        },
+        {
+            "_id": "e29ec9c2-d3c8-4709-98c3-6f3a00197559",
+            "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
+            "containerId": "",
+            "name": "get-juice-by-id",
+            "url": "{{BASE_API_URL}}/juices/1",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-07-23T11:27:37.281Z",
+            "modified": "2024-07-23T14:35:29.527Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMTc0NDkwOCwiZXhwIjoxNzIxNzQ4NTA4fQ.SnHsEv5bVTCbUlJLkqPE6xs-C3e_-wrvBwecum5zdZ0"
+                }
+            ]
+        },
+        {
+            "_id": "6075b9af-61a1-4f10-8eb4-4e04e7b1652f",
+            "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
+            "containerId": "",
+            "name": "create-juice",
+            "url": "{{BASE_API_URL}}/juices/create",
+            "method": "POST",
+            "sortNum": 17500,
+            "created": "2024-07-23T11:28:43.735Z",
+            "modified": "2024-07-23T14:28:38.247Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMTc0NDkwOCwiZXhwIjoxNzIxNzQ4NTA4fQ.SnHsEv5bVTCbUlJLkqPE6xs-C3e_-wrvBwecum5zdZ0"
+                }
+            ],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Avocado Juice"
+                    },
+                    {
+                        "name": "price",
+                        "value": "13000"
+                    },
+                    {
+                        "name": "category",
+                        "value": "Not Sweet"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "d:\\video\\amiya_sadge4.png"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "7fa1b036-2116-4cad-a0fd-2b15834fce10",
+            "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
+            "containerId": "",
+            "name": "delete-juice",
+            "url": "{{BASE_API_URL}}/juices/delete/2",
+            "method": "POST",
+            "sortNum": 18125,
+            "created": "2024-07-23T15:39:56.859Z",
+            "modified": "2024-07-23T15:40:43.382Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMTc0OTIyNywiZXhwIjoxNzIxNzUyODI3fQ.LDk0Iq1KYtQZbWYU-WDX-1OgcIEmvSxmXW2d0bbHmW0"
+                }
+            ]
+        },
+        {
+            "_id": "86490696-2245-4346-bdd2-cdbf4f4a3285",
+            "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
+            "containerId": "",
+            "name": "update-juice",
+            "url": "{{BASE_API_URL}}/juices/update",
+            "method": "POST",
+            "sortNum": 18750,
+            "created": "2024-07-23T14:18:47.542Z",
+            "modified": "2024-07-23T14:28:53.387Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMTc0NDkwOCwiZXhwIjoxNzIxNzQ4NTA4fQ.SnHsEv5bVTCbUlJLkqPE6xs-C3e_-wrvBwecum5zdZ0"
+                }
+            ],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "id",
+                        "value": "1"
+                    },
+                    {
+                        "name": "name",
+                        "value": "Guava++ Juice"
+                    },
+                    {
+                        "name": "price",
+                        "value": "30000"
+                    },
+                    {
+                        "name": "category",
+                        "value": "Very Sweet"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\TORPADEKA\\Videos\\amiya_sadge6.gif"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "d96fc451-2db5-466e-8f28-8edac63ec995",
+            "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
+            "containerId": "",
+            "name": "register-user",
+            "url": "{{BASE_API_URL}}/users/register",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-07-23T11:24:46.803Z",
+            "modified": "2024-07-23T11:25:06.649Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"torpadeka\",\n  \"password\": \"torpadeka\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "5d61d22e-6ac9-4532-99a4-f5f66f46ca38",
+            "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
+            "containerId": "",
+            "name": "login-user",
+            "url": "{{BASE_API_URL}}/users/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-07-23T11:25:14.047Z",
+            "modified": "2024-07-23T11:25:23.499Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"torpadeka\",\n  \"password\": \"torpadeka\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "Jwh_W6-Xhr7T6HAoNqfhnZBTP8Up_i7R-70q-bMTUalH2KpG1zfCMTGE02Z2UrXqkxNGLM1jsmprHiZh7fmH_Q"
+}
