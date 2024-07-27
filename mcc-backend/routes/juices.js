@@ -37,11 +37,11 @@ var upload = multer({
     storage: storage,
 });
 
-var createJuice = (name, price, category, image) =>
+var createJuice = (name, price, category, image, description) =>
     new Promise((resolve, reject) => {
         db.query(
-            "insert into juices (name, price, category, image) value(?, ?, ?, ?)",
-            [name, price, category, image],
+            "insert into juices (name, price, category, image, description) value(?, ?, ?, ?, ?)",
+            [name, price, category, image, description],
             (error, result) => {
                 if (!!error) reject(error);
                 resolve(result);
@@ -49,11 +49,11 @@ var createJuice = (name, price, category, image) =>
         );
     });
 
-var updateJuice = (id, name, price, category, image) =>
+var updateJuice = (id, name, price, category, image, description) =>
     new Promise((resolve, reject) => {
         db.query(
-            "UPDATE juices SET name = ?, price = ?, category = ?, image = ? WHERE id = ?",
-            [name, price, category, image, id],
+            "UPDATE juices SET name = ?, price = ?, category = ?, image = ?, description = ? WHERE id = ?",
+            [name, price, category, image, description, id],
             (error, result) => {
                 if (!!error) reject(error);
                 resolve(result);
@@ -98,7 +98,13 @@ router.get("/:id", function (req, res, next) {
 
 router.post("/create", upload.single("image"), function (req, res, next) {
     const body = req.body;
-    createJuice(body.name, body.price, body.category, req.file.path).then(
+    createJuice(
+        body.name,
+        body.price,
+        body.category,
+        req.file.path,
+        body.description
+    ).then(
         (result) => {
             res.status(200).json(result);
         },
@@ -115,7 +121,8 @@ router.post("/update", upload.single("image"), function (req, res, next) {
         body.name,
         body.price,
         body.category,
-        req.file.path
+        req.file.path,
+        body.description
     ).then(
         (result) => {
             res.status(200).json(result);

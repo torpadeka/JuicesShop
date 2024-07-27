@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "MCC-JuiceShop",
     "collectionId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
-    "dateExported": "2024-07-23T15:42:22.483Z",
+    "dateExported": "2024-07-27T15:33:25.455Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -32,11 +32,28 @@
             "method": "GET",
             "sortNum": 15000,
             "created": "2024-07-23T11:27:37.281Z",
-            "modified": "2024-07-23T14:35:29.527Z",
+            "modified": "2024-07-27T15:29:28.930Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMTc0NDkwOCwiZXhwIjoxNzIxNzQ4NTA4fQ.SnHsEv5bVTCbUlJLkqPE6xs-C3e_-wrvBwecum5zdZ0"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMjA5NDEyNCwiZXhwIjoxNzIyMDk3NzI0fQ.6JfSY46V14VDfYLrRFXLbCd9RZXPxNlNhjYxYSMS7aM"
+                }
+            ]
+        },
+        {
+            "_id": "188050f3-9089-49d3-add1-6072e473afca",
+            "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
+            "containerId": "",
+            "name": "get-review-by-id",
+            "url": "{{BASE_API_URL}}/reviews/1",
+            "method": "GET",
+            "sortNum": 16250,
+            "created": "2024-07-27T12:19:15.934Z",
+            "modified": "2024-07-27T12:21:11.090Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMjA4Mjc3NSwiZXhwIjoxNzIyMDg2Mzc1fQ.xw58EVXdxXa7AdY3D7MvMNsgr1xB94Pt1Ui6A7LG0kU"
                 }
             ]
         },
@@ -49,11 +66,11 @@
             "method": "POST",
             "sortNum": 17500,
             "created": "2024-07-23T11:28:43.735Z",
-            "modified": "2024-07-23T14:28:38.247Z",
+            "modified": "2024-07-27T15:30:22.737Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMTc0NDkwOCwiZXhwIjoxNzIxNzQ4NTA4fQ.SnHsEv5bVTCbUlJLkqPE6xs-C3e_-wrvBwecum5zdZ0"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMjA5NDEyNCwiZXhwIjoxNzIyMDk3NzI0fQ.6JfSY46V14VDfYLrRFXLbCd9RZXPxNlNhjYxYSMS7aM"
                 }
             ],
             "body": {
@@ -62,21 +79,25 @@
                 "form": [
                     {
                         "name": "name",
-                        "value": "Avocado Juice"
+                        "value": "Soda Strawberry Juice"
                     },
                     {
                         "name": "price",
-                        "value": "13000"
+                        "value": "16000"
                     },
                     {
                         "name": "category",
                         "value": "Not Sweet"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Strawberry flavored soda juice with a slight taste of sourness"
                     }
                 ],
                 "files": [
                     {
                         "name": "image",
-                        "value": "d:\\video\\amiya_sadge4.png"
+                        "value": "c:\\Users\\TORPADEKA\\Videos\\amiya_pfp.jpeg"
                     }
                 ]
             }
@@ -107,11 +128,11 @@
             "method": "POST",
             "sortNum": 18750,
             "created": "2024-07-23T14:18:47.542Z",
-            "modified": "2024-07-23T14:28:53.387Z",
+            "modified": "2024-07-27T15:33:10.407Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMTc0NDkwOCwiZXhwIjoxNzIxNzQ4NTA4fQ.SnHsEv5bVTCbUlJLkqPE6xs-C3e_-wrvBwecum5zdZ0"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMjA5NDEyNCwiZXhwIjoxNzIyMDk3NzI0fQ.6JfSY46V14VDfYLrRFXLbCd9RZXPxNlNhjYxYSMS7aM"
                 }
             ],
             "body": {
@@ -133,6 +154,10 @@
                     {
                         "name": "category",
                         "value": "Very Sweet"
+                    },
+                    {
+                        "name": "description",
+                        "value": "An expanded Guava Juice!"
                     }
                 ],
                 "files": [
@@ -161,6 +186,45 @@
             }
         },
         {
+            "_id": "eae0082c-138a-45f4-b51e-cc919cc5a598",
+            "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
+            "containerId": "",
+            "name": "create-review",
+            "url": "{{BASE_API_URL}}/reviews/create",
+            "method": "POST",
+            "sortNum": 21875,
+            "created": "2024-07-27T14:28:27.661Z",
+            "modified": "2024-07-27T14:29:47.574Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMjA5MDUxNCwiZXhwIjoxNzIyMDk0MTE0fQ.TmHZmWCFUo_UXNW9vameOht5sEQ5wSlxC3oSWSS7i4Q"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\": \"1\",\n  \"juiceId\": \"2\",\n  \"review\": \"Thomas thinks this juice is amazing!\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "a778833f-1c89-4183-87d4-70d5f29884c5",
+            "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
+            "containerId": "",
+            "name": "get-review-by-juice-id",
+            "url": "{{BASE_API_URL}}/reviews/juice/1",
+            "method": "GET",
+            "sortNum": 26250,
+            "created": "2024-07-27T12:20:51.595Z",
+            "modified": "2024-07-27T12:21:08.078Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMjA4Mjc3NSwiZXhwIjoxNzIyMDg2Mzc1fQ.xw58EVXdxXa7AdY3D7MvMNsgr1xB94Pt1Ui6A7LG0kU"
+                }
+            ]
+        },
+        {
             "_id": "5d61d22e-6ac9-4532-99a4-f5f66f46ca38",
             "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
             "containerId": "",
@@ -178,5 +242,5 @@
             }
         }
     ],
-    "ref": "Jwh_W6-Xhr7T6HAoNqfhnZBTP8Up_i7R-70q-bMTUalH2KpG1zfCMTGE02Z2UrXqkxNGLM1jsmprHiZh7fmH_Q"
+    "ref": "Jwh_W6-Xhr7T6HAoNqfhnU9wLqQjxcG-C2XP3nCQArcCa-F8qNY_3ocz2yI7JKSvewhtgvrI12_ddDxRD9wHlQ"
 }

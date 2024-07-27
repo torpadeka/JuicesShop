@@ -3,6 +3,9 @@ import 'home_page.dart';
 import 'login_page.dart';
 import 'register_page.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'route_aware_widget.dart';
+
+final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
 
 void main() {
   runApp(const MyApp());
@@ -14,11 +17,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorObservers: [routeObserver],
       home: const AuthChecker(),
       routes: {
-        '/home': (context) => const HomePage(),
-        '/login': (context) => const LoginPage(),
-        '/register': (context) => const RegisterPage(),
+        '/home': (context) => const RouteAwareWidget(child: HomePage()),
+        '/login': (context) => const RouteAwareWidget(child: LoginPage()),
+        '/register': (context) => const RouteAwareWidget(child: RegisterPage()),
       },
     );
   }
@@ -47,18 +51,18 @@ class AuthChecker extends StatelessWidget {
     const storage = FlutterSecureStorage();
 
     String? token = await storage.read(key: 'auth_token');
-    String? expiration = await storage.read(key: 'token_expiration');
-    return {'token': token, 'expiration': expiration};
+    String? expiration = await storage.read(key: 'expires_in');
+    return {'token': token, 'expires_in': expiration};
   }
 
   Future<bool> isTokenValid() async {
     final tokenData = await getToken();
 
-    if (tokenData['token'] == null || tokenData['expiration'] == null) {
+    if (tokenData['token'] == null || tokenData['expires_in'] == null) {
       return false;
     }
 
-    final expirationDate = DateTime.parse(tokenData['expiration']!);
+    final expirationDate = DateTime.parse(tokenData['expires_in']!);
     return DateTime.now().isBefore(expirationDate);
   }
 }

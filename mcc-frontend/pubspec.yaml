@@ -1,5 +1,5 @@
-name: mcc_frontend
-description: A new Flutter project.
+name: JuicesShop
+description: A simple shop juices app project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -37,6 +37,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_secure_storage: ^5.0.2
+  carousel_slider: ^4.2.1
   http: ^0.13.3
 
 dev_dependencies:

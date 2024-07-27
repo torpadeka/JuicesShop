@@ -16,7 +16,7 @@ var doRegister = (username, password) => {
             "insert into users (username, password) value (?, ?)",
             [username, hashPassword],
             (error, result) => {
-                if (!!error) reject(error);
+                if (!!error) return reject(error);
                 resolve(result);
             }
         );
@@ -27,10 +27,11 @@ router.post("/register", function (req, res, next) {
     const body = req.body;
     doRegister(body.username, body.password).then(
         (result) => {
-            res.status(200).send("Register Success!");
+            res.status(200).json(result);
         },
         (error) => {
-            res.status(500).send(error);
+            console.error(error);
+            res.status(500).json({ error: error.message });
         }
     );
 });
@@ -42,37 +43,40 @@ var doLogin = (username, password) => {
             [username],
             (error, result) => {
                 if (error) {
-                    console.error('Database query error:', error);
+                    console.error("Database query error:", error);
                     return reject(error);
                 }
-                console.log('Query result:', result); // Debugging line
+                console.log("Query result:", result); // Debugging line
 
                 if (result.length === 0) {
-                    return reject(new Error('User not found'));
+                    return reject(new Error("User not found"));
                 }
 
-                const isUserExists = bcrypt.compareSync(password, result[0].password);
+                const isUserExists = bcrypt.compareSync(
+                    password,
+                    result[0].password
+                );
 
                 if (isUserExists) {
-                    const expiresIn = Math.floor(Date.now() / 1000) + 3600; // 1 hour expiration
+                    const expiresIn = Math.floor(Date.now() / 1000) + 3600;
                     const token = jwt.sign(
                         { username: result[0].username },
                         process.env.API_SECRET,
-                        { expiresIn: '1h' }
+                        { expiresIn: "1h" }
                     );
 
                     resolve({
                         token: token,
-                        expiresIn: expiresIn // Include expiration time in response
+                        username: result[0].username,
+                        expiresIn: new Date(expiresIn * 1000).toISOString(),
                     });
                 } else {
-                    return reject(new Error('Invalid password'));
+                    return reject(new Error("Invalid password"));
                 }
             }
         );
     });
 };
-
 
 router.post("/login", function (req, res, next) {
     const body = req.body;
