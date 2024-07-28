@@ -39,7 +39,7 @@ router.post("/register", function (req, res, next) {
 var doLogin = (username, password) => {
     return new Promise((resolve, reject) => {
         db.query(
-            "SELECT username, password FROM users WHERE username = ?",
+            "SELECT id, username, password FROM users WHERE username = ?",
             [username],
             (error, result) => {
                 if (error) {
@@ -68,6 +68,7 @@ var doLogin = (username, password) => {
                     resolve({
                         token: token,
                         username: result[0].username,
+                        id: result[0].id,
                         expiresIn: new Date(expiresIn * 1000).toISOString(),
                     });
                 } else {
@@ -90,5 +91,32 @@ router.post("/login", function (req, res, next) {
         }
     );
 });
+
+var getUserInfo = (userId) => {
+    return new Promise((resolve, reject) => {
+        db.query(
+            "select * from users where id = ?",
+            [userId],
+            (error, result) => {
+                if (!!error) return reject(error);
+                if (result.length === 0) return reject(new Error("User not found"));
+                resolve(result[0].username);
+            }
+        );
+    });
+};
+
+
+router.get("/info/:userId", function (req, res, next) {
+    getUserInfo(req.params.userId).then(
+        (result) => {
+            res.status(200).json({ username: result });
+        },
+        (error) => {
+            res.status(500).json({ error: error.message });
+        }
+    );
+});
+
 
 module.exports = router;

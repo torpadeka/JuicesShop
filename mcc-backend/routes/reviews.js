@@ -69,7 +69,7 @@ router.post("/create", function (req, res, next) {
     const body = req.body;
     createReview(body.userId, body.juiceId, body.review).then(
         (result) => {
-            res.status(200).json(result);
+            res.status(201).json(result);
         },
         (error) => {
             res.status(500).send(error);

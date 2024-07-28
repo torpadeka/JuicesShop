@@ -36,55 +36,56 @@ class LoginPageState extends State<LoginPage> {
   }
 
   void handleLogin() async {
-    try {
-      final response = await http.post(
-        Uri.parse(
-            'http://127.0.0.1:3000/users/login'), // Change to your machine's IP if not using an emulator
-        headers: <String, String>{
-          'Content-Type': 'application/json; charset=UTF-8',
-        },
-        body: jsonEncode(<String, String>{
-          'username': usernameController.text,
-          'password': passwordController.text,
-        }),
-      );
+  try {
+    final response = await http.post(
+      Uri.parse('http://127.0.0.1:3000/users/login'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'username': usernameController.text,
+        'password': passwordController.text,
+      }),
+    );
 
-      if (response.statusCode == 200) {
-        final Map<String, dynamic> responseBody = jsonDecode(response.body);
-        await storage.write(key: 'auth_token', value: responseBody['token']);
-        await storage.write(key: 'username', value: responseBody['username']);
-        await storage.write(
-            key: 'expires_in', value: responseBody['expiresIn'].toString());
-        if (mounted) {
-          Navigator.pushNamed(context, '/home');
-        }
-      } else {
-        print('Login failed with status: ${response.statusCode}');
-        print('Response body: ${response.body}');
-
-        final errorResponse = jsonDecode(response.body);
-        setState(() {
-          errorMessage = errorResponse['error'] ?? 'Unknown error occurred';
-        });
+    if (response.statusCode == 200) {
+      final Map<String, dynamic> responseBody = jsonDecode(response.body);
+      await storage.write(key: 'auth_token', value: responseBody['token']);
+      await storage.write(key: 'username', value: responseBody['username']);
+      await storage.write(key: 'user_id', value: responseBody['id'].toString());
+      await storage.write(
+          key: 'expires_in', value: responseBody['expiresIn'].toString());
+      if (mounted) {
+        Navigator.pushNamed(context, '/home');
       }
-    } catch (e) {
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: const Text('Login Failed'),
-          content: const Text('A fatal error occured!'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('OK'),
-            ),
-          ],
-        ),
-      );
+    } else {
+      print('Login failed with status: ${response.statusCode}');
+      print('Response body: ${response.body}');
+
+      final errorResponse = jsonDecode(response.body);
+      setState(() {
+        errorMessage = errorResponse['error'] ?? 'Unknown error occurred';
+      });
     }
+  } catch (e) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Login Failed'),
+        content: const Text('A fatal error occured!'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
   }
+}
+
 
   bool isAlphanumeric(String password) {
     final alphanumeric = RegExp(r'^[a-zA-Z0-9]+$');

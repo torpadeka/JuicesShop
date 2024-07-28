@@ -106,7 +106,7 @@ router.post("/create", upload.single("image"), function (req, res, next) {
         body.description
     ).then(
         (result) => {
-            res.status(200).json(result);
+            res.status(201).json(result);
         },
         (error) => {
             res.status(500).send(error);

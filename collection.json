@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "MCC-JuiceShop",
     "collectionId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
-    "dateExported": "2024-07-27T15:33:25.455Z",
+    "dateExported": "2024-07-28T04:07:57.245Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -15,11 +15,11 @@
             "method": "GET",
             "sortNum": 10000,
             "created": "2024-07-23T11:24:09.630Z",
-            "modified": "2024-07-23T14:35:21.203Z",
+            "modified": "2024-07-28T03:42:45.746Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMTc0NDkwOCwiZXhwIjoxNzIxNzQ4NTA4fQ.SnHsEv5bVTCbUlJLkqPE6xs-C3e_-wrvBwecum5zdZ0"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMjEzNzYyNywiZXhwIjoxNzIyMTQxMjI3fQ.UxU5YyW6UZEAzEREhpH2TDYhsl81HxND5EWNNpfCudg"
                 }
             ]
         },
@@ -32,11 +32,11 @@
             "method": "GET",
             "sortNum": 15000,
             "created": "2024-07-23T11:27:37.281Z",
-            "modified": "2024-07-27T15:29:28.930Z",
+            "modified": "2024-07-28T03:33:56.190Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMjA5NDEyNCwiZXhwIjoxNzIyMDk3NzI0fQ.6JfSY46V14VDfYLrRFXLbCd9RZXPxNlNhjYxYSMS7aM"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMjEzNzYyNywiZXhwIjoxNzIyMTQxMjI3fQ.UxU5YyW6UZEAzEREhpH2TDYhsl81HxND5EWNNpfCudg"
                 }
             ]
         },
@@ -50,6 +50,23 @@
             "sortNum": 16250,
             "created": "2024-07-27T12:19:15.934Z",
             "modified": "2024-07-27T12:21:11.090Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMjA4Mjc3NSwiZXhwIjoxNzIyMDg2Mzc1fQ.xw58EVXdxXa7AdY3D7MvMNsgr1xB94Pt1Ui6A7LG0kU"
+                }
+            ]
+        },
+        {
+            "_id": "a778833f-1c89-4183-87d4-70d5f29884c5",
+            "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
+            "containerId": "",
+            "name": "get-review-by-juice-id",
+            "url": "{{BASE_API_URL}}/reviews/juice/1",
+            "method": "GET",
+            "sortNum": 16875,
+            "created": "2024-07-27T12:20:51.595Z",
+            "modified": "2024-07-27T12:21:08.078Z",
             "headers": [
                 {
                     "name": "Authorization",
@@ -208,23 +225,6 @@
             }
         },
         {
-            "_id": "a778833f-1c89-4183-87d4-70d5f29884c5",
-            "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
-            "containerId": "",
-            "name": "get-review-by-juice-id",
-            "url": "{{BASE_API_URL}}/reviews/juice/1",
-            "method": "GET",
-            "sortNum": 26250,
-            "created": "2024-07-27T12:20:51.595Z",
-            "modified": "2024-07-27T12:21:08.078Z",
-            "headers": [
-                {
-                    "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMjA4Mjc3NSwiZXhwIjoxNzIyMDg2Mzc1fQ.xw58EVXdxXa7AdY3D7MvMNsgr1xB94Pt1Ui6A7LG0kU"
-                }
-            ]
-        },
-        {
             "_id": "5d61d22e-6ac9-4532-99a4-f5f66f46ca38",
             "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
             "containerId": "",
@@ -240,7 +240,24 @@
                 "raw": "{\n  \"username\": \"torpadeka\",\n  \"password\": \"torpadeka\"\n}",
                 "form": []
             }
+        },
+        {
+            "_id": "aed1f85c-de8e-4624-9519-3abd7fd6acab",
+            "colId": "95abb56e-3f70-45b0-bd51-bdf03c89f1bc",
+            "containerId": "",
+            "name": "get-user-info",
+            "url": "{{BASE_API_URL}}/users/info/1",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-07-28T03:40:43.913Z",
+            "modified": "2024-07-28T03:41:29.198Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvcnBhZGVrYSIsImlhdCI6MTcyMjEzNzYyNywiZXhwIjoxNzIyMTQxMjI3fQ.UxU5YyW6UZEAzEREhpH2TDYhsl81HxND5EWNNpfCudg"
+                }
+            ]
         }
     ],
-    "ref": "Jwh_W6-Xhr7T6HAoNqfhnU9wLqQjxcG-C2XP3nCQArcCa-F8qNY_3ocz2yI7JKSvewhtgvrI12_ddDxRD9wHlQ"
+    "ref": "Jwh_W6-Xhr7T6HAoNqfhnY0ZLHCKakKJ-5-kmW1HeBt0IekSb1FkAvyQzwkNtH1hcFy1S6q12fleRvIc65gMDA"
 }

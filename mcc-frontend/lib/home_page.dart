@@ -17,12 +17,13 @@ class HomePageState extends State<HomePage> {
   final storage = const FlutterSecureStorage();
   int currentPageIndex = 0; // 0 for home, 1 for items (juices) page
   List<Map<String, dynamic>> juices = [];
-  String username = "";
+  String username = "User";
 
   void handleLogout() {
     storage.delete(key: 'auth_token');
     storage.delete(key: 'expires_in');
     storage.delete(key: 'username');
+    storage.delete(key: 'user_id');
     Navigator.pushNamed(context, '/login');
   }
 
@@ -43,6 +44,7 @@ class HomePageState extends State<HomePage> {
           storage.delete(key: 'auth_token');
           storage.delete(key: 'expires_in');
           storage.delete(key: 'username');
+          storage.delete(key: 'user_id');
           Navigator.pushNamed(context, '/login');
         }
       } else {
@@ -58,9 +60,11 @@ class HomePageState extends State<HomePage> {
 
   Future<void> fetchUsername() async {
     final fetchedUsername = await storage.read(key: 'username');
-    setState(() {
-      username = fetchedUsername.toString();
-    });
+    if (fetchedUsername != null) {
+      setState(() {
+        username = fetchedUsername;
+      });
+    }
   }
 
   Future<void> fetchJuices() async {
@@ -164,7 +168,10 @@ class HomePageState extends State<HomePage> {
                           }).toList(),
                         ),
                         const SizedBox(height: 64),
-                        Text("Welcome $username"),
+                        Text(
+                          "Welcome $username",
+                          textScaleFactor: 2,
+                        ),
                         const SizedBox(height: 64),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
